@@ -1,0 +1,99 @@
+:root {
+  /* Footer base */
+  --footer-bg: #0F1011;
+
+  /* Texto */
+  --footer-text: #bbbbbb;
+  --footer-link: #a8a8a8;
+  --footer-link-hover: #ffffff;
+  --footer-subtext: #6e6e6e;
+
+  /* Separadores */
+  --footer-separator: rgb(73, 73, 73);
+
+  /* Botón fondo */
+  --footer-button-bg: linear-gradient(0deg, rgba(66, 73, 81, 1) 0%, rgba(43, 48, 53, 1) 100%);
+}
+
+/* ===== Footer Base ===== */
+.pre-login-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pre-login-footer .btn {
+    width: 150px;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    bottom: 0px;
+    align-items: center;
+    background-color: var(--footer-bg);
+    z-index: 0;
+}
+
+/* ===== Separator Line ===== */
+.footer-separator {
+    width: 90%;
+    height: 1px;
+    margin: 15px auto;
+    background-color: var(--footer-separator);
+}
+
+/* ===== Links Wrapper ===== */
+.footer .links {
+    display: flex;
+    justify-self: center;
+    align-content: center;
+    color: var(--footer-text);
+    margin: 10px 0 0 0;
+}
+
+.footer-links .links .link {
+    color: var(--footer-link);
+    margin: 0 20px;
+    font-size: 12px;
+}
+.footer-links .links .link:hover {
+    color: var(--footer-link-hover);
+}
+
+.footer-links .separator {
+    color: var(--footer-text);
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+/* ===== Social Icons ===== */
+.footer-links .icons a {
+    margin: 10px;
+    width: 100px;
+    color: var(--footer-text);
+}
+.footer-links .icons .icon:hover {
+    color: var(--footer-link-hover);
+}
+
+/* ===== Subtext (Disclaimer, etc.) ===== */
+.footer .subtext {
+    color: var(--footer-subtext);
+    justify-self: center;
+    text-justify: inter-word;
+    width: 80%;
+    font-size: 12px;
+    margin: 20px 0 0 0;
+}
+
+/* ===== Mobile/Anon View Visibility ===== */
+.footer .unloggin {
+    display: block;
+}
+
+/* ===== Footer Button (e.g. back to top) ===== */
+.footer .btn {
+    right: 20px;
+    background: var(--footer-button-bg);
+}

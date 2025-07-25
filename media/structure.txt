@@ -1,0 +1,64 @@
+    analisis_banner.png
+    banner.png
+    banner1.png
+    banner_imagen.png
+    img1.jpeg
+    img1.png
+    Mi video.mp4
+    user.png
+[analisis]
+[guias]
+[recursos]
+[tops]
+                analisis_banner.png
+                banner.png
+                banner1.png
+                banner_imagen.png
+                img1.jpeg
+                img1.png
+                Mi video.mp4
+                structure.txt
+                user.png
+                [analisis]
+                    [guias]
+                        [recursos]
+                            [tops]
+                analisis_banner.png
+                banner.png
+                banner1.png
+                banner_imagen.png
+                img1.jpeg
+                img1.png
+                Mi video.mp4
+                structure.txt
+                user.png
+                [analisis]
+                    [guias]
+                        [recursos]
+                            [tops]
+                analisis_banner.png
+                banner.png
+                banner1.png
+                banner_imagen.png
+                img1.jpeg
+                img1.png
+                Mi video.mp4
+                structure.txt
+                user.png
+                [analisis]
+                    [guias]
+                        [recursos]
+                            [tops]
+        analisis_banner.png
+        banner.png
+        banner1.png
+        banner_imagen.png
+        img1.jpeg
+        img1.png
+        Mi video.mp4
+        structure.txt
+        user.png
+        [analisis]
+        [guias]
+        [recursos]
+        [tops]

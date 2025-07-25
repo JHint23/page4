@@ -1,0 +1,98 @@
+/* Estilos para el modal de edición de usuario */
+.modal-usuario {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1050;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* fondo oscuro translúcido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-usuario .modal-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    
+
+}
+
+.modal-usuario.dark .modal-content {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+.modal-usuario h3 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #007bff;
+}
+
+.modal-usuario label {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.modal-usuario input[type="file"],
+.modal-usuario input[type="text"],
+.modal-usuario input[type="date"] {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+.modal-usuario input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.modal-usuario .btn {
+    min-width: 100px;
+}
+
+.modal-usuario .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.modal-usuario .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.modal-usuario .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+}
+
+.modal-usuario .btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

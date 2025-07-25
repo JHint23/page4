@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Insertar Reseña en Supabase</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f4f4f4; }
+    form { background: white; padding: 2rem; border-radius: 8px; max-width: 600px; margin: auto; }
+    input, textarea, select { width: 100%; margin-bottom: 1rem; padding: 0.5rem; font-size: 1rem; }
+    button { padding: 0.7rem 1.5rem; background: #3b82f6; color: white; border: none; cursor: pointer; font-size: 1rem; border-radius: 4px; }
+    .message { text-align: center; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <form id="reviewForm">
+    <h2>Agregar Reseña</h2>
+
+    <label for="tabla">Selecciona la tabla:</label>
+    <select id="tabla" required>
+      <option value="" disabled selected>-- Elige una tabla --</option>
+      <option value="analisis">Análisis</option>
+      <option value="guias">Guías</option>
+      <option value="tops">Tops-280</option>
+    </select>
+
+    <input type="text" id="imagen_url" placeholder="URL de la imagen" required />
+    <input type="text" id="titulo" placeholder="Título del juego" required />
+    <textarea id="descripcion" rows="5" placeholder="Descripción" required></textarea>
+    <input type="date" id="fecha" required />
+
+    <!-- Campo puntuacion solo para tops -->
+    <input type="number" id="puntuacion" placeholder="Puntuación (solo para Tops)" min="0" max="100" style="display:none;" />
+
+    <input type="url" id="enlace" placeholder="Enlace a la reseña" required />
+
+    <button type="submit">Insertar</button>
+    <div class="message" id="mensaje"></div>
+  </form>
+
+  <script>
+    const SUPABASE_URL =  'https://jepsuuzybjlsfqgrzeyw.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImplcHN1dXp5Ympsc2ZxZ3J6ZXl3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAxMDQ2NDQsImV4cCI6MjA2NTY4MDY0NH0.t3c3b8UIWRNbSE3tHsMqc1GIN3KwAAuC4daO0eZE2Zg';; // reemplaza con tu key real
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    const form = document.getElementById('reviewForm');
+    const mensaje = document.getElementById('mensaje');
+    const tablaSelect = document.getElementById('tabla');
+    const puntuacionInput = document.getElementById('puntuacion');
+
+    // Mostrar/ocultar campo puntuacion según tabla
+    tablaSelect.addEventListener('change', () => {
+      if (tablaSelect.value === 'tops') {
+        puntuacionInput.style.display = 'block';
+        puntuacionInput.required = true;
+      } else {
+        puntuacionInput.style.display = 'none';
+        puntuacionInput.required = false;
+        puntuacionInput.value = '';
+      }
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const tabla = tablaSelect.value;
+      const imagen_url = document.getElementById('imagen_url').value.trim();
+      const titulo = document.getElementById('titulo').value.trim();
+      const descripcion = document.getElementById('descripcion').value.trim();
+      const fecha = document.getElementById('fecha').value;
+      const enlace = document.getElementById('enlace').value.trim();
+      const puntuacion = puntuacionInput.value ? parseInt(puntuacionInput.value, 10) : null;
+
+      if (!tabla) {
+        mensaje.textContent = 'Por favor, selecciona una tabla.';
+        return;
+      }
+
+      if (!imagen_url || !titulo || !descripcion || !fecha || !enlace) {
+        mensaje.textContent = 'Por favor, completa todos los campos.';
+        return;
+      }
+
+      // Construir objeto a insertar
+      let nuevoRegistro = { imagen_url, titulo, descripcion, fecha, enlace };
+      if (tabla === 'tops') {
+        if (puntuacion === null || isNaN(puntuacion) || puntuacion < 0 || puntuacion > 100) {
+          mensaje.textContent = 'Por favor, ingresa una puntuación válida (0-100) para Tops.';
+          return;
+        }
+        nuevoRegistro.puntuacion = puntuacion;
+      }
+
+      try {
+        const { data, error } = await supabaseClient
+          .from(tabla)
+          .insert([nuevoRegistro]);
+
+        if (error) {
+          console.error(error);
+          mensaje.textContent = '❌ Error al insertar en la tabla ' + tabla;
+        } else {
+          mensaje.textContent = '✅ Reseña insertada en ' + tabla + ' correctamente.';
+          form.reset();
+          puntuacionInput.style.display = 'none';
+          puntuacionInput.required = false;
+        }
+      } catch (err) {
+        console.error(err);
+        mensaje.textContent = '❌ Error inesperado.';
+      }
+    });
+  </script>
+</body>
+</html>

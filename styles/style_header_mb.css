@@ -1,0 +1,262 @@
+:root {
+  /* Fondo principal */
+  --nav-bg-mobile: #111315;
+
+  /* Texto */
+  --nav-text: #ffffff;
+  --nav-secondary-text: #c7c7c7;
+  --nav-muted-text: #7c7c7c;
+
+  /* Iconos */
+  --nav-icon-color: #cecece;
+  --nav-icon-active-color: #ffffff;
+
+  /* Gradientes fondo de menú */
+  --menu-nav-bg: #171A1C;
+  --menu-link-bg: linear-gradient(90deg, rgba(101, 101, 101, 1) 0%, rgba(33, 37, 41, 0) 100%);
+  --menu-link-before-bg: linear-gradient(90deg, #202427 0%, #171A1C 100%);
+  --menu-link-before-active-bg: linear-gradient(90deg, rgb(45, 45, 51) 0%, rgba(33, 37, 41, 0) 100%);
+
+  /* Separador */
+  --menu-separator-color: #414B55;
+
+  /* Menú usuario */
+  --menu-user-link-bg: linear-gradient(90deg, #65656500 0%, #656565 100%);
+  --menu-user-before-bg: linear-gradient(90deg, #171A1C 0%, #202427 100%);
+  --menu-user-before-active-bg: linear-gradient(90deg, #21252900 0%, #2d2d33 100%);
+  --menu-user-header-bg: linear-gradient(0deg, rgba(66, 73, 81, 1) 0%, rgba(43, 48, 53, 1) 100%);
+  --menu-user-header-active-bg: linear-gradient(0deg, rgb(48, 54, 59) 0%, rgb(36, 41, 44) 100%);
+
+  /* Backdrop */
+  --panel-backdrop-bg: rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* Fondo (background nav) */
+
+
+.nav-bg-mb {
+  display: none;
+  flex-wrap: unset;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  position: fixed;
+  background-color: var(--nav-bg-mobile);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  z-index: 6;
+}
+
+/* Icono del menú (hamburguesa) */
+#nav-link-icon svg path {
+  filter: invert(90%) sepia(50%) saturate(300%) hue-rotate(180deg);
+}
+
+/* User */
+.nav-user-mb .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.nav-user-mb .btn {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo */
+.nav-logo-mb {
+  width: 120px;
+  height: 40px;
+}
+.nav-logo-mb .icon {
+  color: var(--nav-secondary-text);
+}
+
+/* Nav Links */
+.nav-link-mb {
+  all: unset;
+  width: 50px;
+  height: 100%;
+}
+.nav-link-mb .btn {
+  all: unset;
+  width: 100%;
+  height: 100%;
+}
+.nav-link-icon {
+  font-size: 50px;
+  color: var(--nav-icon-color);
+}
+.nav-link-icon.active {
+  color: var(--nav-icon-active-color);
+}
+
+/* Menu Panel */
+.menu-nav-mb {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 300px;
+  height: calc(100vh - 60px);
+  background-color: var(--menu-nav-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.menu-nav-mb.active {
+  transform: translateX(0);
+}
+
+/* Menu Links */
+.menu-link-mb {
+  text-decoration: none;
+  color: var(--nav-text);
+  width: 100%;
+  height: 60px;
+  margin: 10px 0 0 0;
+  border-radius: 12px;
+  position: relative;
+  background: var(--menu-link-bg);
+}
+.menu-link-mb .before-1 {
+  content: '';
+  position: absolute;
+  width: 98.6%;
+  height: 95%;
+  left: 2px;
+  border-radius: 10px;
+  background: var(--menu-link-before-bg);
+}
+.menu-link-mb .before-1:active {
+  background: var(--menu-link-before-active-bg);
+}
+.menu-link-mb .icon {
+  position: absolute;
+  font-size: 30px;
+  color: var(--nav-text);
+  margin: 0 10px;
+}
+.menu-link-mb .text {
+  position: absolute;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--nav-text);
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+}
+
+/* Separador */
+.menu-link-separator-mb {
+  width: 100%;
+  height: 1px;
+  background-color: var(--menu-separator-color);
+  margin: 20px 0;
+}
+
+/* User Menu Panel */
+.menu-user-mb {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 300px;
+  height: calc(100vh - 60px);
+  background-color: var(--menu-nav-bg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+.menu-user-mb.active {
+  transform: translateX(0);
+}
+.menu-user-mb .menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu-user-link-mb {
+  text-decoration: none;
+  color: var(--nav-text);
+  width: 100%;
+  height: 60px;
+  margin: 10px 0 0 0;
+  border-radius: 12px;
+  position: relative;
+  background: var(--menu-user-link-bg);
+}
+.menu-user-link-mb .before-1 {
+  content: '';
+  position: absolute;
+  width: 98.6%;
+  height: 95%;
+  left: 2px;
+  border-radius: 10px;
+  background: var(--menu-user-before-bg);
+}
+.menu-user-link-mb:active .before-1 {
+  background: var(--menu-user-before-active-bg);
+}
+.menu-user-link-mb .icon {
+  position: absolute;
+  font-size: 30px;
+  color: var(--nav-text);
+  margin: 0 10px;
+}
+.menu-user-link-mb .text {
+  position: absolute;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--nav-text);
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+}
+
+/* User Info Text */
+.menu-user-mb .text-1 {
+  font-size: 22px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--nav-text);
+}
+.menu-user-mb .text-2 {
+  font-size: 13px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--nav-muted-text);
+}
+
+/* User Buttons */
+.menu-user-mb .btn {
+  position: absolute;
+  right: 20px;
+  background: var(--menu-user-header-bg);
+}
+.menu-user-mb .btn:active {
+  background: var(--menu-user-header-active-bg);
+}
+
+/* Backdrop Panel */
+.panel-backdrop {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background-color: var(--panel-backdrop-bg);
+  display: none;
+  z-index: 998;
+}
+.panel-backdrop.active {
+  display: block;
+}

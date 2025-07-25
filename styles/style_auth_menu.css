@@ -1,0 +1,223 @@
+:root {
+    /* ===== Colors ===== */
+    --bg-main-gradient-start: rgba(55, 61, 66, 1);
+    --bg-main-gradient-end: rgba(33, 37, 41, 1);
+    --bg-input: rgba(20, 23, 27, 0.5);
+    --border-default: #ffffff44;
+    --border-focus: #80ACFF;
+    --text-light: #ffffff;
+    --text-light-muted: #ffffff8a;
+    --text-strong: #ffffffd2;
+    --text-error: #FF6666;
+    --text-accent: #6D91D4;
+    --button-bg: #3261B8;
+    --button-bg-active: #3261b8af;
+    --shadow-color: rgba(0, 0, 0, 0.801);
+
+    /* ===== Sizes ===== */
+    --container-width: 515px;
+    --container-height: 700px;
+    --input-width: 400px;
+    --input-height: 45px;
+    --input-radius: 10px;
+
+    /* ===== Font Families ===== */
+    --font-main: 'Inter', sans-serif;
+    --font-title: 'Inria Sans', sans-serif;
+
+    /* ===== Font Sizes ===== */
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-md: 15px;
+    --font-size-lg: 16px;
+    --font-size-xl: 30px;
+
+    /* ===== Z-Index ===== */
+    --z-blur: 999;
+    --z-form: 1000;
+}
+
+/* ==== Overlay Blur ==== */
+.auth-wrapper  .blur-overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: var(--z-blur);
+}
+.auth-wrapper  .blur-overlay.active{
+    display: block;
+}
+/* ==== Shared Container Styles ==== */
+.auth-wrapper .create-acount-menu,
+.auth-wrapper .login-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: var(--container-width);
+    height: var(--container-height);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: linear-gradient(138deg, var(--bg-main-gradient-start), var(--bg-main-gradient-end));
+    box-shadow: -2px 0 5dvb var(--shadow-color);
+    z-index: var(--z-form);
+}
+
+/* Optional initial hidden state */
+
+.auth-wrapper .create-acount-menu.active{
+    display: flex;
+}
+
+.auth-wrapper .login-menu.active{
+    display: flex;
+}
+
+
+/* ==== Back Button ==== */
+.auth-wrapper .back {
+    border: none;
+    align-self: flex-start;
+    background-color: transparent;
+    width: 100px;
+    height: 40px;
+    font-size: var(--font-size-md);
+    text-align: center;
+    color: var(--text-light-muted);
+    cursor: pointer;
+}
+.auth-wrapper .back .simbol {
+    color: var(--text-accent);
+}
+
+/* ==== Title ==== */
+.auth-wrapper .title {
+    margin-bottom: 30px;
+}
+.auth-wrapper .title samp {
+    width: 300px;
+    height: 50px;
+    font-size: var(--font-size-xl);
+    text-align: center;
+    color: var(--text-strong);
+    font-family: var(--font-title);
+}
+
+/* ==== Shared Form Fields ==== */
+.auth-wrapper .email,
+.auth-wrapper .name,
+.auth-wrapper .pwd,
+.auth-wrapper .pwd-repit,
+.auth-wrapper .date {
+    width: var(--input-width);
+    margin-bottom: 10px;
+}
+
+.auth-wrapper .text {
+    font-family: var(--font-main);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--text-light);
+}
+.auth-wrapper .simbol {
+    font-family: var(--font-main);
+    font-size: var(--font-size-xs);
+    font-weight: bold;
+    color: var(--text-error);
+}
+
+/* ==== Inputs ==== */
+.auth-wrapper .input,
+.auth-wrapper .input-date {
+    width: 100%;
+    height: var(--input-height);
+    border-radius: var(--input-radius);
+    background-color: var(--bg-input);
+    border: 2px solid var(--border-default);
+    color: #d6d6d6;
+    font-size: var(--font-size-sm);
+    padding-left: 10px;
+    font-family: var(--font-main);
+    margin-top: 5px;
+}
+.auth-wrapper .input:focus,
+.auth-wrapper .input-date:focus {
+    border: none;
+    outline: none;
+    border: 2px solid var(--border-focus);
+}
+
+/* ==== Date Picker ==== */
+.auth-wrapper .date-inputs {
+    margin-top: 5px;
+}
+.auth-wrapper .input-date {
+    color-scheme: dark;
+}
+::-webkit-calendar-picker-indicator {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    position: relative;
+    right: 0.3rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+::-webkit-calendar-picker-indicator:hover {
+    transform: scale(1.2);
+}
+
+/* ==== Submit Button ==== */
+.auth-wrapper .create-acount-menu .btn,
+.auth-wrapper .login-menu .btn 
+{
+    margin-top: 10px;
+    width: var(--input-width);
+    height: 50px;
+    border-radius: var(--input-radius);
+    background-color: var(--button-bg);
+    color: var(--text-light);
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+.auth-wrapper .create-acount-menu .btn:active,
+.auth-wrapper .login-menu .btn:active {
+    background-color: var(--button-bg-active);
+    border: 2px solid var(--border-focus);
+}
+
+/* ==== Mode Switch Buttons ==== */
+.auth-wrapper .login-mode,
+.auth-wrapper .register-mode {
+    width: var(--input-width);
+    margin-top: 10px;
+}
+.auth-wrapper .login-mode .change,
+.auth-wrapper .register-mode .change {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.auth-wrapper .login-mode .change .text,
+.auth-wrapper .register-mode .change .text {
+    color: var(--text-light-muted);
+    font-size: var(--font-size-md);
+    font-family: var(--font-title);
+}
+.auth-wrapper .login-mode .change .simbol,
+.auth-wrapper .register-mode .change .simbol {
+    color: var(--text-accent);
+    font-size: var(--font-size-md);
+}

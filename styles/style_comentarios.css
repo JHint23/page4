@@ -1,0 +1,184 @@
+:root {
+    --color-background: #363B40;
+    --color-comment-bg: #5a5a5a;
+    --color-primary: #4f585e;
+    --color-primary-dark: #454f55;
+    --color-primary-light: #ffffff;
+    --color-border: #363B40;
+    --color-avatar-border: #535353;
+    --color-text: #333;
+    --color-muted: #666;
+    --color-danger: #cc0000;
+    --color-danger-hover: #a10000;
+    --color-reply-bg: #eaf3ff;
+    --color-reply-border: #3f78ff;
+    --font-size-small: 0.85em;
+}
+
+
+/* Estilo para el aviso de respuesta activa */
+#respuesta-info {
+    display: none;
+    margin: 10px 0;
+    padding: 10px 12px;
+    background-color: var(--color-reply-bg);
+    border-left: 4px solid var(--color-reply-border);
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--color-text);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Botón cancelar respuesta */
+#cancelar-respuesta {
+    background-color: transparent;
+    border: none;
+    color: var(--color-reply-border);
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 8px;
+    transition: color 0.2s;
+}
+
+#cancelar-respuesta:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Contenedor de comentarios --- */
+#comments-section {
+    width: 95%;
+    margin-top: 40px;
+}
+
+#comments-list {
+    margin-top: 20px;
+}
+
+/* --- Comentario individual --- */
+.comentario {
+    border: 4px solid var(--color-border);
+    padding: 15px 0px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: var(--color-background);
+    position: relative;
+}
+
+.comentario-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comentario-header img.avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid var(--color-avatar-border);
+}
+
+.comentario-header strong {
+    font-weight: 600;
+    margin-right: auto;
+}
+
+.comentario-header .fecha {
+    font-size: var(--font-size-small);
+    color: var(--color-muted);
+}
+
+.comentario-texto {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* --- Botón de respuesta --- */
+.responder-btn {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.responder-btn:hover {
+    text-decoration: underline;
+}
+
+/* --- Botón de eliminación --- */
+.eliminar-btn {
+    background-color: transparent;
+    color: var(--color-danger);
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0;
+}
+
+.eliminar-btn:hover {
+    text-decoration: underline;
+    color: var(--color-danger-hover);
+}
+
+/* --- Respuestas anidadas --- */
+.respuestas {
+    margin-top: 10px;
+    margin-left: 30px;
+    border-left: 2px solid var(--color-border);
+    padding-left: 15px;
+}
+
+/* --- Respuesta activa info (duplicado optimizado) --- */
+#respuesta-info p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* --- Formulario de nuevo comentario --- */
+#comment-form {
+    margin-top: 30px;
+}
+
+#comment-text {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 1em;
+}
+
+#comment-submit {
+    margin-top: 10px;
+    background-color: var(--color-primary);
+    color: rgb(207, 207, 207);
+    border: none;
+    padding: 8px 16px;
+    font-size: 1em;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#comment-submit:hover {
+    background-color: var(--color-primary-dark);
+}

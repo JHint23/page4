@@ -1,0 +1,14 @@
+:root {
+  --matrix-bg: rgba(33, 37, 41, 0.25);
+  --matrix-text: rgba(166, 204, 255, 0.8);
+}
+
+:root[data-tema="claro"] {
+  --matrix-bg: rgba(155, 156, 175, 0.144);
+  --matrix-text: #ffffffcc;
+}
+
+:root[data-tema="oscuro"] {
+  --matrix-bg: rgba(33, 37, 41, 0.25);
+  --matrix-text: #a6ccffcc;
+}

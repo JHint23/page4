@@ -1,0 +1,160 @@
+.user-seccion{
+
+    justify-self: center;
+    width: 100%;
+    height: 300px;
+    background: #132130;
+    background: linear-gradient(100deg,rgba(19, 33, 48, 1) 0%, rgba(28, 30, 32, 1) 100%);
+}
+.main-content{
+    margin-top: 100px;
+    background: #89C4FF;
+    background: linear-gradient(150deg,#89c4ff42 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.user-seccion .user-icon{
+  margin: auto;
+}
+.user-seccion .user-icon img{
+  all:unset;
+  width: 170px;
+  height: 170px;
+  background-color: #1a1b1d;
+  border-radius: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  border: solid 2px;
+  border-color: #757c83;
+  
+}
+.user-edit{
+  position: absolute;
+  right:100px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border: unset;
+  border-radius: 20px;
+  color: #c4c4c4;
+  background-color: #3d4042;
+}
+
+.user-info{
+  position: relative;
+  height: 130px;
+  margin: auto;
+  background-color: #4d5c6b00;
+  padding: 10px 0;
+}
+.user-info .user-name{
+  padding: 0px;
+  margin: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 30px;
+}
+.user-info .user-tag{
+  padding: 0px;
+  margin: 0;
+  color: #ffffff8e;
+  font-size: 12px;
+}
+.user-info .user-date{
+  padding: 0px;
+  margin: 0;
+  color: #ffffff5d;
+  font-size: 12px;
+  margin-top: 10px;
+}
+/*_tabs_*/
+.tabs {
+  width: 90%;
+  margin: 40px auto;  
+  font-size: 13px;
+}
+
+.tab-buttons {
+  display: flex;
+  background-color: #ffffff00;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 0x;
+  background-color: transparent;
+  border: none;
+  color: #cfcfcf;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab-buttons button:hover {
+  background-color: #ffffff13;
+}
+
+.tab-buttons button.active {
+  background-color: transparent;
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.tab-content {
+  display: none;
+  color: #dcdcdc;
+  background-color: #da343400;
+}
+.tab-content.active {
+  display: block;
+}
+.card-user{
+  display: flex;
+  width: 100%;
+  height: 160px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 4px 5px 10px 1px #0000003f;
+  border: solid 1px ;
+  border-color: #3d4042;
+  background-color: #24282c71;
+  
+  transition: ease background-color 0.2s,boder-color 0.2s ;
+}
+.card-user:hover{
+  background-color: #384149a1;
+  border-color: #424a50;
+}
+.card-user img{
+  height: 100%;
+  width: 160px;
+  object-fit: cover;
+}
+.card-user .content{
+  padding: 0px 10px;
+}
+.card-user .title{
+  color: #ffffff;
+  font-weight:bold;
+
+  margin: 0px 0px 10px 0px;
+  
+}
+.card-user .subcontent{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6; /* Número de líneas visibles */
+  max-height: calc(1.2em * 6); /* Aproximadamente 3 líneas */
+  color: #c4c4c4;
+}
+.btn-logout {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;;
+    background: linear-gradient(0deg, rgba(66, 73, 81, 1) 0%, rgba(43, 48, 53, 1) 100%);
+}
+.btn-logout:active {
+    background: linear-gradient(0deg, rgb(48, 54, 59) 0%, rgb(36, 41, 44) 100%);
+}

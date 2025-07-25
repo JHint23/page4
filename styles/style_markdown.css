@@ -1,0 +1,46 @@
+#post-content h1,
+#post-content h2,
+#post-content h3,
+#post-content h4 {
+    color: #eeeeee;
+    margin-top: 1em;
+}
+
+#post-content p {
+    color: #fafcfdab;
+    /* gris claro para párrafos */
+    line-height: 1.5;
+}
+
+#post-content a {
+    color: #ffffff4f;
+    /* azul para enlaces */
+    text-decoration: none;
+}
+#post-content h1{
+    font-size: 2.5em;
+}
+#post-content h2{
+    font-size: 2em;
+}
+#post-content h3{
+    font-size: 2em;
+}
+#post-content table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+#post-content th,
+
+#post-content td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: left;
+}
+
+#post-content th {
+  background-color: #007bff18; /* Cambia este color por el que desees */
+  color: white;              /* Color del texto en los títulos */
+}
