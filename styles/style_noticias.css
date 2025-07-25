@@ -128,8 +128,8 @@
 }
 
 .main-header-noticias img {
-    height: 15vw;
+    height: 17vw;
     width: 50vw;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 2vw;
 }
