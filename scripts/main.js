@@ -5,8 +5,15 @@ import { setupAuthMenuEvents, openAuthMenu } from './modules/ui/authMenu.js';
 import { mostrarUsuario } from './modules/ui/uiHandlers.js';
 import { login, registrarse, subirImagenUsuario, borrarCuenta, cerrarSesion } from './modules/auth/authHandlers.js';
 import { initThemeChanger } from './modules/themeChanger.js';
-import {loadPartial} from './modules/partial.js';
-import { initMatrixBackground } from './modules/ui/matrixBackground.js'; // <-- Agrega esto arriba
+import { loadPartial } from './modules/partial.js';
+import { initMatrixBackground } from './modules/ui/matrixBackground.js';
+
+// 👉 Ajuste automático para GitHub Pages
+function getBasePath() {
+  const path = window.location.pathname;
+  return path.endsWith('/') ? path : path.substring(0, path.lastIndexOf('/') + 1);
+}
+
 async function iniciarApp() {
   const loader = document.getElementById("loader");
   const contenido = document.getElementById("contenido");
@@ -14,10 +21,13 @@ async function iniciarApp() {
   if (loader) loader.style.display = "flex";
   if (contenido) contenido.style.display = "none";
   document.body.style.overflow = "hidden";
+
   initMatrixBackground();
-  await loadPartial('header','../assets/header.html');
-  await loadPartial('auth-menu','../assets/authMenu.html');
-  await loadPartial('footer','../assets/footer.html');
+
+  const base = getBasePath(); // Detecta la base correcta
+  await loadPartial('header', `${base}assets/header.html`);
+  await loadPartial('auth-menu', `${base}assets/authMenu.html`);
+  await loadPartial('footer', `${base}assets/footer.html`);
 
   setupAuthMenuEvents();
 
@@ -36,6 +46,7 @@ async function iniciarApp() {
   document.querySelectorAll('.btn-logout').forEach(button => {
     button.addEventListener('click', cerrarSesion);
   });
+
   document.querySelectorAll('.btn-register').forEach(button => {
     button.addEventListener('click', registrarse);
   });
@@ -44,12 +55,12 @@ async function iniciarApp() {
   if (subirBtn) {
     subirBtn.addEventListener('click', subirImagenUsuario);
   }
-  
+
   setupMobileMenu();
   await mostrarUsuario();
   setupEditarUsuario();
   initThemeChanger();
-  
+
   // Finalmente ocultar loader y mostrar contenido
   if (loader) loader.style.display = "none";
   if (contenido) contenido.style.display = "block";
@@ -57,4 +68,3 @@ async function iniciarApp() {
 }
 
 document.addEventListener('DOMContentLoaded', iniciarApp);
-
