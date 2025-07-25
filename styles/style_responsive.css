@@ -102,7 +102,7 @@
     .top-card{
         height: 20vw;
     }
-    
+
     .top-subcard .content .text{
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -130,7 +130,7 @@
         border-radius: 2vw;
     }
 
-    }
+
     .main-header-analisis{
         height: 90vw;
     }
@@ -255,3 +255,4 @@
     .noticias-card .desc-card .date{
         font-size: 2vw;
     }
+}
