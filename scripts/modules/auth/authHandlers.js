@@ -203,6 +203,6 @@ export async function cerrarSesion() {
     alert('Error al cerrar sesión: ' + error.message);
     return;
   }
-  window.location.href = '../../../noticias.html';
+  window.location.href = '/noticias.html';
   mostrarLogin();
 }
