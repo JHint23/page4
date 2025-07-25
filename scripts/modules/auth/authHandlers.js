@@ -203,6 +203,11 @@ export async function cerrarSesion() {
     alert('Error al cerrar sesión: ' + error.message);
     return;
   }
-  window.location.href = '/noticias.html';
+  function getBasePath() {
+  const path = window.location.pathname;
+  const lastSlash = path.lastIndexOf('/');
+  return path.substring(0, lastSlash + 1); // Esto te da la base de la ruta en la que te encuentras
+}
+  window.location.href = `${getBasePath()}noticias.html`;
   mostrarLogin();
 }
