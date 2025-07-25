@@ -1,15 +1,31 @@
-:root {
+:root[data-tema="oscuro"] {
     --color-background: #363B40;
     --color-comment-bg: #5a5a5a;
     --color-primary: #4f585e;
     --color-primary-dark: #454f55;
-    --color-primary-light: #ffffff;
+    --color-primary-light: #363B40;
     --color-border: #363B40;
     --color-avatar-border: #535353;
     --color-text: #333;
     --color-muted: #666;
-    --color-danger: #cc0000;
-    --color-danger-hover: #a10000;
+    --color-danger: #a85656;
+    --color-danger-hover: #e76767;
+    --color-reply-bg: #363B40;
+    --color-reply-border: #3f78ff;
+    --font-size-small: 0.85em;
+}
+:root[data-tema="claro"] {
+    --color-background: #f1f1f1;
+    --color-comment-bg: #e7e7e7;
+    --color-primary: #4f585e;
+    --color-primary-dark: #454f55;
+    --color-primary-light: #ffffff;
+    --color-border: #f1f1f1;
+    --color-avatar-border: #535353;
+    --color-text: #333;
+    --color-muted: #666;
+    --color-danger: #e77a7a;
+    --color-danger-hover: #d87a7a;
     --color-reply-bg: #eaf3ff;
     --color-reply-border: #3f78ff;
     --font-size-small: 0.85em;
