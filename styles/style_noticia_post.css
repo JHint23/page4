@@ -1,4 +1,6 @@
-:root {
+:root[data-tema="oscuro"] {
+  --textarea-bg:#0000003a;
+  --textarea-color: #ffffffbd;
   /* Espacios */
   --margin-top-main-content: 100px;
   --padding-section-1: 10px 15px;
@@ -14,6 +16,52 @@
   --color-c9c9c9: #c9c9c9;
   --color-cfcfcf: #cfcfcf;
   --color-484e53: #484e53;
+  --color-2e3236: #2e3236;
+  --scrollbar-thumb-color: #63616e52;
+  --btn-shadow: 0px 2px 4px #00000049;
+
+  /* Tamaños */
+  --height-section-1: 70px;
+  --height-section-2: 25vw;
+  --width-section-1-2: 92%;
+  --width-banner: 35vw;
+  --width-info: 18vw;
+  --btn-height: 30px;
+  --btn-font-size: 12px;
+  --font-size-section-1-title: 20px;
+  --font-size-info: 0.8vw;
+  --font-size-section-4: 15px;
+
+  /* Radios */
+  --border-radius-banner: 10px;
+  --border-radius-btn: 20px;
+
+  /* Bordes */
+  --border-bottom-section-1: 2px solid var(--color-white-28);
+  --border-bottom-section-2: 2px solid var(--color-white-50);
+
+  /* Backgrounds */
+  --background-gradient-info: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
+  --background-gradient-section-3: linear-gradient(0deg, transparent 0%, rgba(217, 217, 217, 0.116) 100%);
+}
+:root[data-tema="claro"] {
+  --textarea-bg:#ffffff80;
+  --textarea-color: #000000bd;
+  /* Espacios */
+  --margin-top-main-content: 100px;
+  --padding-section-1: 10px 15px;
+  --padding-section-2: 20px 0;
+  --padding-section-3-btn: 0 10px;
+  --padding-section-3: 10px 0;
+  --margin-section-3: 0 30px;
+
+  /* Colores */
+  --color-white: #000000;
+  --color-white-28: #00000028;
+  --color-white-50: #00000050;
+  --color-c9c9c9: #000000;
+  --color-cfcfcf: #000000;
+  --color-484e53: #6b7c8a46;
   --color-2e3236: #2e3236;
   --scrollbar-thumb-color: #63616e52;
   --btn-shadow: 0px 2px 4px #00000049;
@@ -84,6 +132,7 @@
 }
 
 .noticia-post-info {
+
   width: var(--width-info);
   display: flex;
   flex-direction: column;
@@ -92,11 +141,13 @@
 }
 
 .noticia-post-info-seccion-2 {
+  
   height: 100%;
   font-size: var(--font-size-info);
   padding: 0 10px;
   overflow-y: auto;
   background: var(--background-gradient-info);
+  border-radius: 10px;
 }
 
 .noticia-post-info-seccion-2 .title {
@@ -124,6 +175,7 @@
 }
 
 .noticia-post-seccion-3 .btn {
+  margin-top: 10px;
   background-color: var(--color-484e53);
   color: var(--color-c9c9c9);
   border: none;
@@ -144,4 +196,8 @@
   padding: var(--padding-section-3);
   font-size: var(--font-size-section-4);
   /*text-align: justify;*/
+}
+textarea{
+  background-color: var(--textarea-bg);
+  color: var(--textarea-color);
 }
