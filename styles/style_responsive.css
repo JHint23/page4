@@ -102,6 +102,7 @@
     .top-card{
         height: 20vw;
     }
+    
     .top-subcard .content .text{
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -112,6 +113,7 @@
         max-height: calc(1.2em * 6); /* Aproximadamente 3 líneas */
         color: #c4c4c4;
     }
+
     .main-header-tops .title{
         font-size: 4vw;
     }
@@ -119,7 +121,8 @@
         height: 90vw;
     }
     .main-header-tops .text{
-        font-size: 1.4vw;
+        font-size: 2vw;
+        width:  82vw;
     }
     .main-header-tops img {
         height: 25vw;
