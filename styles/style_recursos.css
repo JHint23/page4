@@ -1,166 +1,208 @@
-:root[data-tema="oscuro"] {
-    --color-white-alpha-64: #ffffffa4;
-    --color-white-alpha-30: #ffffff4d;
-    --color-white-alpha-20: #ffffff33;
-    --color-white-alpha-45: #ffffff75;
-    --color-bg-card: #272B30;
-    --color-bg-header-rgba: rgba(44, 66, 66, 0);
+@media (max-width: 990px) {
+    /* ===== Layout ===== */
+    .main-content,
+    .search-box {
+        width: 94%;
+        margin: 80px auto 30px auto;
+    }
 
-    --color-shadow-hover: rgba(0, 0, 0, 0.397);
-    /* Colores */
-    --color-white: #ffffff;
-    --color-white-alpha-70: #c4c4c4;
-    --color-border-hover: #acacac;
-    --color-shadow-hover: rgba(0, 0, 0, 0.2);
+    /* ===== Nav Visibility ===== */
+    .nav-bg-pc {
+        display: none !important;
+    }
 
-    /* Tamaños */
-    --height-main-header: 80px;
-    --font-size-main-header: 2vw;
-    --font-size-recurso-title: 20px;
-    --font-size-recurso-subcontent: 1vw;
-    --border-radius-card: 10px;
+    .nav-bg-mb {
+        display: flex !important;
+    }
 
-    /* Espacios */
-    --margin-main-content-top: 100px;
-    --margin-recurso-card: 20px;
+    /* ===== Footer Adjustments ===== */
+    .footer-links .links .link {
+        font-size: 10px;
+        
+        margin: 0 5px;
+    }
+
+    .footer-links .separator {
+        font-size: var(--footer-font-size-sm);
+    }
+
+    .footer .subtext,
+    .footer .unloggin {
+        font-size: var(--footer-font-size-sm);
+    }
+    .user-seccion .user-icon img{
+        width: 60%;
+        height: auto;
+    }
+    .user-seccion{
+        height: 30vw;
+    }
+    .tab-buttons button{
+        font-size: 2vw;
+    }
+    .user-info .user-name{
+        font-size: 6vw;
+    }
+    .user-info .user-tag{
+        font-size: 12px;
+    }
+    .user-info .user-date{
+        font-size: 12px;
+    }
+    .user-seccion .user-icon{
+        margin-top: 4vw;
+    }
+    .noticia-post-seccion-2{
+        height: auto;
+        flex-direction: column;
+    }
+    .noticia-post-info{
+        width: auto;
+
+    }
+    .noticia-post-banner{
+        width: auto;
+        margin: 0;
+    }
+    .noticia-post-seccion-4 p{  
+        font-size: 13px;
+    }
+    .noticia-post-info-seccion-2{
+        font-size: 1.3vw;
+    }
+    .recurso-card{
+        height: 170px;
+    }
+    .recurso-card .content .subcontent{
+        font-size: 2vw;
+    }
+    .main-header{
+        font-size: 4vw;
+    }
+    .recurso-card img {
+        height: 80%;
+        width: 200px;
+    }
+        .analisis-content{
+        grid-template-columns: 1fr;
+    }
+    .analisis-card {
+        height: 66vw;
+    }
+    .analisis-card .desc-card{
+        height: 20vw;
+    }
+    .analisis-card .desc-card .title{
+        font-size: 2.5vw;
+    }
+    .analisis-card .desc-card .text{
+        font-size: 1.5vw;
+    }
+    .analisis-card .desc-card .date{
+        font-size: 2vw;
+    }
+    
+    .top-card {
+        width: 95%;
+        height: 190px;
+        
+    }
+    .top-card .top-subcard .puntuacion{
+        height:14vw;
+        aspect-ratio: 1/1;
+    }
+    .top-card img{
+        height: 100%;
+        width: 17vw;
+    }
+    .top-card .top-subcard .puntuacion .score{
+        font-size: 4vw;
+    }
+    .top-card{
+        height: 20vw;
+    }
+
+    .guias-content{
+        grid-template-columns: 1fr;
+    }
+    .guias-card {
+        height: 66vw;
+    }
+    .guias-card .desc-card{
+        height: 20vw;
+    }
+    .guias-card .desc-card .title{
+        font-size: 2.5vw;
+    }
+    .guias-card .desc-card .text{
+        font-size: 1.5vw;
+    }
+    .guias-card .desc-card .date{
+        font-size: 2vw;
+    }
+    .carousel-item .card .card-body .card-info .text{
+        color: #ebebeb;
+        font-size: 1.5vw;
+    }
+
+    .top-subcard .content .text{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 5; /* Número de líneas visibles */
+        font-size: 1.7vw;
+        max-height: calc(1.2em * 6); /* Aproximadamente 3 líneas */
+        color: #c4c4c4;
+    }
+    .main-header-guias,
+    .main-header-noticias,
+    .main-header-recursos,
+    .main-header-tops,
+    .main-header-analisis{
+        height: 90vw;
+    }
+    .main-header-guias .text,
+    .main-header-noticias .text,
+    .main-header-recursos .text,
+    .main-header-tops .text,
+    .main-header-analisis .text{
+        font-size: 2vw;
+        width:  82vw;
+    }
+    .main-header-guias .title,
+    .main-header-noticias .title,
+    .main-header-recursos .title,
+    .main-header-tops .title,
+    .main-header-analisis .title{
+        font-size: 5vw;
+    }
+    .main-header-guias img,
+    .main-header-noticias img,
+    .main-header-recursos img,
+    .main-header-tops img,
+    .main-header-analisis img {
+        height: 25vw;
+        width: 80vw;
+        border-radius: 2vw;
+    }
+
+    .noticias-content{
+        grid-template-columns: 1fr;
+    }
+    .noticias-card {
+        height: 66vw;
+    }
+    .noticias-card .desc-card{
+        height: 20vw;
+    }
+    .noticias-card .desc-card .title{
+        font-size: 2.5vw;
+    }
+    .noticias-card .desc-card .text{
+        font-size: 1.5vw;
+    }
+    .noticias-card .desc-card .date{
+        font-size: 2vw;
+    }
 }
-:root[data-tema="claro"] {
-    --color-white: #000000;
-    --color-white-alpha-64: #000000a4;
-    --color-white-alpha-30: #ffffff4d;
-    --color-white-alpha-20: #00000033;
-    --color-white-alpha-45: #00000075;
-
-    --color-bg-card: #ffffff;
-    --color-bg-header-rgba: rgba(44, 66, 66, 0);
-
-    --color-shadow-hover: rgba(104, 104, 104, 0.678);
-    /* Colores */
-    --color-white: #000000;
-    --color-white-alpha-70: #000000;
-    --color-border-hover: #acacac;
-    --color-shadow-hover: rgba(0, 0, 0, 0.2);
-
-    /* Tamaños */
-    --height-main-header: 80px;
-    --font-size-main-header: 2vw;
-    --font-size-recurso-title: 20px;
-    --font-size-recurso-subcontent: 1vw;
-    --border-radius-card: 10px;
-
-    /* Espacios */
-    --margin-main-content-top: 100px;
-    --margin-recurso-card: 20px;
-}
-.main-header-recursos {
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    flex-direction: column;
-    align-self: center;
-    width: 100%;
-    height: 45vw;
-    color: var(--color-white);
-    background-color: var(--color-bg-header-rgba);
-    border-bottom: 3px solid var(--color-white-alpha-30);
-}
-
-.main-header-recursos .title {
-    font-size: 3vw;
-    font-weight: bold;
-    height: 20px;
-}
-.main-header-recursos .text {
-    font-size: 1vw;
-    background-color: rgba(250, 235, 215, 0);
-    width: 50vw;
-    color: var(--color-white-alpha-64);
-    border-top: 2px solid var(--color-white-alpha-20);
-    border-bottom: 2px solid var(--color-white-alpha-20);
-    padding: 10px 0;
-}
-.main-header-recursos img {
-    height: 17vw;
-    width: 50vw;
-    object-fit: cover;
-    border-radius: 2vw;
-}
-.main-content {
-    margin-top: var(--margin-main-content-top);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.search-box {
-    margin-top: 30px;
-    width: 95%;
-}
-
-.recursos-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    padding: 40px 0;
-}
-
-.recurso-card {
-    position: relative;
-    text-decoration: none;
-    width: 90%;
-    height: 10vw;
-    min-height: 130px;
-    margin: var(--margin-recurso-card);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: var(--border-radius-card);
-    transition: all 0.3s ease;
-    background-color: #272B30;
-    /* fondo similar a otras tarjetas */
-}
-
-.recurso-card:hover {
-    box-shadow: 0 4px 8px var(--color-shadow-hover);
-    transform: scale(1.02);
-    border: 2px solid var(--color-border-hover);
-    cursor: pointer;
-}
-
-.recurso-card img {
-    position: absolute;
-    left: 0;
-    height: 80%;
-    width: 250px;
-    object-fit: cover;
-    margin-left: 20px;
-    border-radius: var(--border-radius-card);
-}
-
-.recurso-card .content {
-    position: absolute;
-    left: 300px;
-    padding: 0 10px;
-}
-
-.recurso-card .content .title {
-    color: var(--color-white);
-    font-weight: bold;
-    font-size: var(--font-size-recurso-title);
-    margin: 10px 0 0 0;
-}
-
-.recurso-card .content .subcontent {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 6;
-    max-height: calc(1.2em * 6);
-    font-size: var(--font-size-recurso-subcontent);
-    color: var(--color-white-alpha-70);
-}
-
