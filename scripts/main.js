@@ -8,12 +8,11 @@ import { initThemeChanger } from './modules/themeChanger.js';
 import { loadPartial } from './modules/partial.js';
 import { initMatrixBackground } from './modules/ui/matrixBackground.js';
 
-// 👉 Ajuste automático para GitHub Pages
 function getBasePath() {
   const path = window.location.pathname;
-  return path.endsWith('/') ? path : path.substring(0, path.lastIndexOf('/') + 1);
+  const lastSlash = path.lastIndexOf('/');
+  return window.location.origin + path.substring(0, lastSlash + 1);
 }
-
 async function iniciarApp() {
   const loader = document.getElementById("loader");
   const contenido = document.getElementById("contenido");
