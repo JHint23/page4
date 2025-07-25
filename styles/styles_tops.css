@@ -19,9 +19,17 @@
     --color-border-hover: #5d5c66ef;
     --color-card-content-bg: rgba(188, 143, 143, 0);
     --color-card-text-bg: rgba(250, 235, 215, 0);
+    --color-white-alpha-64: #ffffffa4;
+    --color-white-alpha-30: #ffffff4d;
+    --color-white-alpha-20: #ffffff33;
+    --color-white-alpha-45: #ffffff75;
 }
 
 :root[data-tema="claro"] {
+    --color-white-alpha-64: #000000a4;
+    --color-white-alpha-30: #ffffff4d;
+    --color-white-alpha-20: #00000033;
+    --color-white-alpha-45: #00000075;
     --color-white: #000000;
     --color-white-opacity: #0000004d;
     --color-white-soft: #000000a4;
@@ -69,16 +77,20 @@
 }
 
 .main-header-tops .title {
+    margin: 30px 0 20px 0;
     font-size: 2vw;
     font-weight: bold;
 }
 
 .main-header-tops .text {
-    font-size: 1vw;
-    background-color: var(--color-card-text-bg);
-    margin: 40px 0;
+    font-size: 0.8vw;
+    background-color: rgba(250, 235, 215, 0);
+    margin: 1px 0px 40px 0;
     width: 50vw;
-    color: var(--color-white-soft);
+    color: var(--color-white-alpha-64);
+    border-top: 2px solid var(--color-white-alpha-20);
+    border-bottom: 2px solid var(--color-white-alpha-20);
+    padding: 10px 0;
 }
 
 /* === CONTENEDORES GENERALES === */
