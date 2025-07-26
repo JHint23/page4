@@ -76,17 +76,19 @@
     .recurso-card .content .subcontent{
         font-size: 2vw;
     }
+    .recurso-card .content{
+        left:200px;
+    }
     .main-header{
         font-size: 4vw;
     }
     .recurso-card img {
         height: 80%;
-        width: 200px;
+        width: 150px;
     }
     .top-card {
         width: 95%;
-        height: 190px;
-        
+        height: 190px; 
     }
     .top-card .top-subcard .puntuacion{
         height:14vw;
